@@ -8,26 +8,25 @@
 </head>
 <body ng-app="Callan">
 	<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="container-fluid" ng-controller="ItemCtrl">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <a class="navbar-brand" href="#">The Big Foodie</a>
     </div>
   </div><!-- /.container-fluid -->
 </nav>
-	<div ng-controller="ItemCtrl">
-		<h1>Callan's Food-Palooza</h1>
-		<div>
-		
+<div ng-controller="ItemCtrl">
+<form>
+	<h1>Callan's Food-Palooza
+  <button type="button" class="btn btn-lg btn-danger right" ng-click="showFav()">Show Me the Food!</button>
+	</h1>
+</form>
+	<div class="container">
+		<div ng-show="showListView">
+			<img ng-class="img" ng-src="{{link}}" alt="#">
+			<p>{{randomFood.food}}</p>
 		</div>
 	</div>
-
+</div>
 	<script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
